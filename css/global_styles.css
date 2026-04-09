@@ -1,0 +1,178 @@
+/* === ESTILO GLOBAL === */
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+/* === INPUT Y BOTÓN === */
+input, button {
+  padding: 10px;
+  font-size: 16px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+}
+
+input {
+  width: 250px;
+}
+
+button {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+  transform: scale(1.05);
+}
+
+/* === RESULTADO === */
+#result {
+  margin-top: 30px;
+  font-size: 22px;
+  color: var(--result-color);
+  min-height: 30px;
+}
+
+/* === STATUS === */
+#status {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* === BARRA DE PROGRESO === */
+#progressContainer {
+  width: 100%;
+  max-width: 300px;
+  height: 20px;
+  background: var(--progress-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 20px;
+  position: relative;
+}
+
+#progressBar {
+  height: 100%;
+  width: 0;
+  background: var(--progress-fill);
+  transition: width 0.2s ease-out;
+}
+
+/* === PARTÍCULAS === */
+#particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #00ffcc;
+  border-radius: 50%;
+  animation: rise 0.8s ease-out forwards;
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+}
+
+/* === CONFETTI === */
+.confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.confetti-piece {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+/* === VARIABLES DE TEMA === */
+:root {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --accent-color: #00cc88;
+  --button-hover: #00aa77;
+  --progress-bg: #333;
+  --progress-fill: linear-gradient(90deg, #00ff88, #00ddff);
+  --result-color: #00ff99;
+}
+
+/* === TEMAS === */
+body.tema-verde {
+  --accent-color: #00cc88;
+  --button-hover: #00aa77;
+  --progress-fill: linear-gradient(90deg, #00ff88, #00ddff);
+  --result-color: #00ff99;
+}
+
+body.tema-rojo {
+  --accent-color: #ff4444;
+  --button-hover: #cc0000;
+  --progress-fill: linear-gradient(90deg, #ff6666, #ff9999);
+  --result-color: #ffaaaa;
+}
+
+body.tema-azul {
+  --accent-color: #3399ff;
+  --button-hover: #0077cc;
+  --progress-fill: linear-gradient(90deg, #66ccff, #99e6ff);
+  --result-color: #66ffff;
+}
+body.tema-test {
+  --accent-color: ##00d6fe;
+  --button-hover: ##00fe8d;
+  --progress-fill: linear-gradient(90deg, ##00feed, ##00fe97);
+  --result-color: ##58ffbb;
+  }
+  
